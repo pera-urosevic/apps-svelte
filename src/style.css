@@ -1,0 +1,103 @@
+:root {
+  /* theme */
+  --color-header: var(--theme-color-header);
+  --hue-primary: var(--theme-hue-primary);
+  --hue-secondary: var(--theme-hue-secondary);
+  /* calculated */
+  --color-base: hsl(var(--hue-primary), 20%, 10%);
+  --color-base-alt: hsl(var(--hue-primary), 20%, 15%);
+  --color-primary: hsl(var(--hue-primary), 30%, 40%);
+  --color-primary-hightlight: hsl(var(--hue-primary), 100%, 50%);
+  --color-primary-lighter: color-mix(in srgb, var(--color-primary) 33%, var(--color-light));
+  --color-primary-light: color-mix(in srgb, var(--color-primary) 66%, var(--color-light));
+  --color-primary-dark: color-mix(in srgb, var(--color-primary) 66%, var(--color-dark));
+  --color-primary-darker: color-mix(in srgb, var(--color-primary) 33%, var(--color-dark));
+  --color-secondary: hsl(var(--hue-secondary), 40%, 60%);
+  --color-secondary-hightlight: hsl(var(--hue-secondary), 100%, 50%);
+  --color-secondary-lighter: color-mix(in srgb, var(--color-secondary) 33%, var(--color-light));
+  --color-secondary-light: color-mix(in srgb, var(--color-secondary) 66%, var(--color-light));
+  --color-secondary-dark: color-mix(in srgb, var(--color-secondary) 66%, var(--color-dark));
+  --color-secondary-darker: color-mix(in srgb, var(--color-secondary) 33%, var(--color-dark));
+  --color-light: hsl(var(--hue-secondary), 50%, 95%);
+  --color-dark: hsl(var(--hue-primary), 50%, 5%);
+  --color-muted: color-mix(in srgb, var(--color-light) 20%, var(--color-dark));
+  --color-mask: hsla(var(--hue-primary), 20%, 10%, 0.8);
+  --color-success: hsl(120, 50%, 50%);
+  --color-warning: hsl(40, 50%, 50%);
+  --color-error: hsl(0, 50%, 50%);
+  --font-family: 'Segoe UI', sans-serif;
+  --font-size: 16px;
+  --line-height: calc(var(--font-size) * 1.4);
+  --header--height: 64px;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-darker) var(--color-base);
+}
+
+::selection {
+  color: var(--color-light);
+  background: var(--color-primary-hightlight);
+}
+
+::-moz-selection {
+  color: var(--color-light);
+  background: var(--color-primary-hightlight);
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  color-scheme: dark;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-base);
+  color: var(--color-light);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  th {
+    text-align: left;
+    font-weight: 600;
+  }
+}
+
+a {
+  color: var(--color-primary-light);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary-dark);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+}
+
+p {
+  margin: 4px 0;
+}
+
+button {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+input {
+  &:focus {
+    outline: 1px solid var(--color-secondary);
+  }
+  &::selection {
+    color: var(--color-light);
+    background: var(--color-primary);
+  }
+}
