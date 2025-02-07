@@ -1,6 +1,6 @@
 import { targets } from '@pages/seeker/stores'
-import type { TargetObjects } from '@pages/seeker/types'
+import type { TargetObject } from '@pages/seeker/types'
 
-export const onInit = (initialTargets: TargetObjects) => {
+export const onInit = (initialTargets: TargetObject[]) => {
   targets.set(initialTargets)
 }

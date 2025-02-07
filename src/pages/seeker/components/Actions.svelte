@@ -7,8 +7,8 @@
   const params = new URLSearchParams(window.location.search)
 
   let targetTitle = $state<string>(params.get('add') ?? '')
-  let targetNote = $state<string>('')
-  let targetRelease = $state<string>('')
+  let targetNote = $state<string>(params.get('note') ?? '')
+  let targetRelease = $state<string>(params.get('release') ?? '')
 
   const onTitle = (event: Event) => {
     const target = event.target as HTMLInputElement
